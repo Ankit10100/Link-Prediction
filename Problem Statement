@@ -1,0 +1,47 @@
+Link Prediction
+
+The objective of this project is to understand various link prediction methods (also known as network completion methods) and its application on various real world problem. The assignment is broadly divided into two classes of approaches i.e., supervised and unsupervised. The task is two understand working principle of these approaches and compare their performances.
+
+Theme A: Topological Methods (Unsupervised Approaches) [30 points]
+
+The topological based methods can also be broadly divided into two classes i.e., node proximity and edge proximity. Node proximity based methods exploit node neighbouring characteristics, whereas edge based methods exploit edge neighbouring characteristics. As neighbouring edges are inherently captured by node neighbours, majority of the topological based link prediction methods consider node proximity. The node proximity based methods are further grouped into two: local and global. The task is to investigate effectiveness of following local and global unsupervised link prediction approaches.
+Local:
+Common Neighbour (CN)
+Jacard Coefficient (JC)
+Adamic Adar (AA)
+Resource Allocation(RA)
+Preferential Attachment (PA)
+Global:
+Katz
+Rooted PageRank
+Theme B: Classification Models (Supervised Approaches)
+
+Part I: Explicit Features [20 Points]
+Represent the edges in a network considering the above estimate. You would need to create both the YES edges and NO edges using the same feature space. In addition to these features, you can also add your own features that you feel relevant and useful. Using the data representation thus constructed, consider the link prediction problem as a binary classification problem and investigate the performance of various classification model. You are also encouraged to investigate ensembling based classification frameworks (Boosting and Bagging) like Adaboost, Random Forest etc.
+Naive Bayes.
+SVM
+Decision Tree (ID3)
+Part II: Embedding Features [30 Points]
+Generate low dimensional feature representation using following embedding techniques and repeat the above classification tasks. Compare the performance of different embedding methods, and also with that of the original feature space.
+PCA
+SVD
+Deepwalk (Code can be downloaded from https://github.com/phanein/deepwalk (Links to an external site.) )
+Theme C: Network Destruction [20 Points]
+
+Link prediction methods are generally used for network completion tasks. Can we use link prediction methods for network destruction task as well? Devise an algorithm for network destruction using link prediction method and investigate effectiveness of topological methods for the task of network destruction.
+Experimental Dataset: 
+
+You will be using the following data :
+Foursquare Restaurant Review Dataset: https://sites.google.com/site/yangdingqi/home/foursquare-dataset  (Links to an external site.)(Pre-processing will be same as that in Assignment1)
+BlogCatalog data : http://socialcomputing.asu.edu/datasets/BlogCatalog3 (Links to an external site.)
+Use all the edges present in the network as "YES", and randomly choose an equal number of "Non-existing" edges as "NO". 
+Performance Evaluation: 
+
+Use five-folds cross validation and evaluate the performance of the prediction model using AUC (Area Under Curve), Precision and Recall.
+For the topological based methods, consider one fold of the YES edges and entire NO edges as test dataset.
+**Important notes:
+
+You need to implement all the topological methods and Naive Bayes classifier on your own. For other classifiers and link prediction methods, you can use any of the open-source tools.
+Tools recommended for machine learning (however, you are free to choose others, but not WEKA)
+Machine learning: scikit-learn, TensorFlow/Keras
+Link Prediction: igraph(R), networkx
